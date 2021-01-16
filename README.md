@@ -8,7 +8,7 @@ See [validata](https://www.npmjs.com/package/validata) for more details on valid
 ## Getting started
 
 ```bash
-npm i validata validata-koa
+npm i validata validata-express
 ```
 
 ## Basic usage
