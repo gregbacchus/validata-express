@@ -64,6 +64,6 @@
     "@types/express": "^4.17.11",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
-    "validata": "^2.1.23"
+    "validata": "^2.1.32"
   }
 }
