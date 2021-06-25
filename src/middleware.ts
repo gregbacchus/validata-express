@@ -11,18 +11,18 @@ export interface ValidateOptions<B, H, Q> {
 export const validateRequest = <B, H, Q>({ body, query, header }: ValidateOptions<B, H, Q>
 ): RequestHandler => (req: Request, res: Response, next: NextFunction): void => {
   const bodyResult = body?.process(req.body);
-  const headerResult = header?.process(req.headers);
-  const queryResult = query?.process(req.query);
+  const headerResult = header?.process(req.headers, ['#']);
+  const queryResult = query?.process(req.query, ['?']);
 
   const issues: Issue[] = [];
   if (isIssue(bodyResult)) {
     issues.push(...bodyResult.issues);
   }
   if (isIssue(headerResult)) {
-    issues.push(...headerResult.issues.map((issue) => issue.nest('#')));
+    issues.push(...headerResult.issues);
   }
   if (isIssue(queryResult)) {
-    issues.push(...queryResult.issues.map((issue) => issue.nest('?')));
+    issues.push(...queryResult.issues);
   }
   if (issues.length > 0) {
     res.status(Statuses.BAD_REQUEST).send(issues);
