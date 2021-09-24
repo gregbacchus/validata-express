@@ -1,6 +1,6 @@
 {
   "name": "validata-express",
-  "version": "5.0.2",
+  "version": "5.0.3",
   "description": "Type safe data validation and sanitization for Express",
   "keywords": [
     "typescript",
