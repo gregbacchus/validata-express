@@ -23,7 +23,7 @@
     "expressjs"
   ],
   "main": "./dist/index.js",
-  "types": "./src/index.ts",
+  "types": "./dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git@github.com:gregbacchus/validata-express.git"
@@ -65,6 +65,6 @@
     "@types/express": "^4.17.12",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
-    "validata": "^4.0.9"
+    "validata": "^4.0.13"
   }
 }
